@@ -4233,29 +4233,10 @@
                 </p>
               </div>
             </div>
-          </div>
-
-          <div>
-            <label class="form-label" for="supabaseUrl">Supabase Project URL *</label>
-            <input
-              id="supabaseUrl"
-              type="text"
-              class="input-field"
-              placeholder="https://your-project.supabase.co"
-              bind:value={supabaseUrlInput}
-            />
-          </div>
-
-          <div>
-            <label class="form-label" for="supabaseAnonKey">Supabase Project API Key (anon / public) *</label>
-            <textarea
-              id="supabaseAnonKey"
-              class="input-field"
-              rows="3"
-              placeholder="eyJhbGciOiJIUzI1NiIsInR5cCI6..."
-              bind:value={supabaseAnonKeyInput}
-            ></textarea>
-            <span class="helper-text">Public Anon Key from your Supabase Project Settings → API.</span>
+            <div style="display: flex; align-items: center; gap: 0.5rem; margin-top: 0.75rem; padding-top: 0.75rem; border-top: 1px solid var(--color-border); font-size: 0.8125rem; color: var(--color-text-secondary);">
+              <span style="display: inline-block; width: 8px; height: 8px; border-radius: 50%; background: #10b981;"></span>
+              <span>Project endpoint & API key securely managed via environment configuration.</span>
+            </div>
           </div>
 
           <div>
@@ -4280,7 +4261,7 @@
             <button
               type="button"
               class="btn-secondary"
-              disabled={isTestingStorage || !supabaseUrlInput.trim() || !supabaseAnonKeyInput.trim()}
+              disabled={isTestingStorage || !supabaseBucketInput.trim()}
               onclick={handleTestStorageConnection}
             >
               {isTestingStorage ? "Testing..." : "🧪 Test Connection"}
@@ -4296,7 +4277,7 @@
               <button
                 type="button"
                 class="btn-primary"
-                disabled={!supabaseUrlInput.trim() || !supabaseAnonKeyInput.trim()}
+                disabled={!supabaseBucketInput.trim()}
                 onclick={handleSaveStorageConfig}
               >
                 <span>💾</span> Save Settings
