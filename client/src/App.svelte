@@ -4235,20 +4235,8 @@
             </div>
             <div style="display: flex; align-items: center; gap: 0.5rem; margin-top: 0.75rem; padding-top: 0.75rem; border-top: 1px solid var(--color-border); font-size: 0.8125rem; color: var(--color-text-secondary);">
               <span style="display: inline-block; width: 8px; height: 8px; border-radius: 50%; background: #10b981;"></span>
-              <span>Project endpoint & API key securely managed via environment configuration.</span>
+              <span>Project endpoint, API key, & storage bucket securely managed via environment configuration.</span>
             </div>
-          </div>
-
-          <div>
-            <label class="form-label" for="supabaseBucket">Storage Bucket Name</label>
-            <input
-              id="supabaseBucket"
-              type="text"
-              class="input-field"
-              placeholder="eventcaps-photos"
-              bind:value={supabaseBucketInput}
-            />
-            <span class="helper-text">Make sure this bucket exists and is set to <strong>Public</strong> in Supabase Storage.</span>
           </div>
 
           {#if storageTestResult}
@@ -4261,7 +4249,7 @@
             <button
               type="button"
               class="btn-secondary"
-              disabled={isTestingStorage || !supabaseBucketInput.trim()}
+              disabled={isTestingStorage}
               onclick={handleTestStorageConnection}
             >
               {isTestingStorage ? "Testing..." : "🧪 Test Connection"}
@@ -4269,18 +4257,10 @@
             <div style="display: flex; gap: 0.5rem;">
               <button
                 type="button"
-                class="btn-secondary"
+                class="btn-primary"
                 onclick={() => (isStorageModalOpen = false)}
               >
-                Cancel
-              </button>
-              <button
-                type="button"
-                class="btn-primary"
-                disabled={!supabaseBucketInput.trim()}
-                onclick={handleSaveStorageConfig}
-              >
-                <span>💾</span> Save Settings
+                Close
               </button>
             </div>
           </div>
