@@ -219,6 +219,16 @@
     initView();
   }
 
+  function openSlideshow(slug) {
+    const origin = window.location.origin;
+    const path = window.location.pathname;
+    const basePath = path.endsWith(".html")
+      ? path.substring(0, path.lastIndexOf("/"))
+      : path.replace(/\/$/, "");
+    const url = `${origin}${basePath}/#/event/${slug}/slideshow`;
+    window.open(url, "_blank");
+  }
+
   async function initView() {
     errorMsg = "";
     successMsg = "";
@@ -2447,8 +2457,7 @@
                 </button>
                 <button
                   class="btn-secondary"
-                  onclick={() =>
-                    navigate(`/event/${guestEventData.slug}/slideshow`)}
+                  onclick={() => openSlideshow(guestEventData.slug)}
                 >
                   <span>📺</span> TV Slideshow
                 </button>
@@ -2911,7 +2920,7 @@
                   </button>
                   <button
                     class="btn-secondary btn-sm"
-                    onclick={() => navigate(`/event/${event.slug}/slideshow`)}
+                    onclick={() => openSlideshow(event.slug)}
                   >
                     <span>📺</span> Slideshow
                   </button>
@@ -2986,8 +2995,7 @@
             <div class="detail-actions-group">
               <button
                 class="btn-primary"
-                onclick={() =>
-                  navigate(`/event/${selectedEvent.slug}/slideshow`)}
+                onclick={() => openSlideshow(selectedEvent.slug)}
               >
                 <span>📺</span> Launch TV Slideshow
               </button>
