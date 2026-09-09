@@ -1,4 +1,4 @@
-# 📸 EventCaps — Serverless Real-Time Event Photo Hub
+# 📸 EventCaps — Zero-Backend Real-Time Event Photo Hub
 
 [![Release](https://img.shields.io/github/v/release/deidi/event-caps?color=blue&label=Release)](https://github.com/deidi/event-caps/releases/tag/v1.0.0)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
@@ -7,7 +7,7 @@
 [![PWA](https://img.shields.io/badge/PWA-Offline%20Ready-blueviolet)](https://web.dev/progressive-web-apps/)
 [![Status](https://img.shields.io/badge/Deploy-GitHub%20Pages-success?logo=github)](https://deidi.github.io/event-caps/#/)
 
-> **EventCaps** is a 100% serverless, cloud-first real-time event photo sharing platform. Built entirely in modern web standards as a client-side Single Page Application (SPA), EventCaps requires **zero dedicated backend servers**, incurs **zero database hosting costs**, and delivers **direct-to-cloud Supabase photo storage**, sub-second **real-time moderation**, and high-impact **live TV presentation slideshows** for 100+ attendees.
+> **EventCaps** is a zero-backend, cloud-first real-time event photo sharing platform. Built entirely in modern web standards as a client-side Single Page Application (SPA) powered by managed BaaS (Supabase Cloud Storage), EventCaps requires **no custom server infrastructure to build or maintain**, incurs **zero dedicated hosting fees**, and delivers **direct-to-cloud photo uploads & global CDN delivery**, sub-second **real-time moderation**, and high-impact **live TV presentation slideshows** for 100+ attendees.
 
 ---
 
@@ -21,8 +21,8 @@
 
 ## 🌟 Key Features
 
-### ⚡ 1. 100% Serverless & Pure SPA Architecture
-- **Zero Backend Maintenance**: Runs entirely inside host and guest web browsers. No Node.js containers, Python backends, or command-line scripts needed during events.
+### ⚡ 1. Zero-Backend & Pure Client SPA Architecture
+- **Zero Custom Backend Maintenance**: Runs entirely inside host and guest web browsers without building, managing, or paying for custom backend servers (no Node.js/Express, Python, or Docker containers). All storage and media delivery are offloaded directly to managed Supabase Cloud Storage.
 - **Static Cloud Deployment**: Optimized for GitHub Pages, Cloudflare Pages, Vercel, or Netlify with built-in SPA 404 fallback routing.
 
 ### ☁️ 2. Direct-to-Cloud Supabase Storage & CDN
