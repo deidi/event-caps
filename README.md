@@ -2,39 +2,70 @@
 
 [![Release](https://img.shields.io/github/v/release/deidi/event-caps?color=blue&label=Release)](https://github.com/deidi/event-caps/releases/tag/v1.0.0)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
-[![Frontend](https://img.shields.io/badge/Frontend-Svelte%205%20%2B%20Vite-orange)](https://svelte.dev/)
-[![Storage](https://img.shields.io/badge/Cloud%20Storage-Supabase%20CDN-3ECF8E?logo=supabase)](https://supabase.com/)
+[![Frontend](https://img.shields.io/badge/Frontend-Svelte%205%20%2B%20Vite%206-orange)](https://svelte.dev/)
+[![Storage](https://img.shields.io/badge/Storage-Supabase%20Cloud%20CDN-3ECF8E?logo=supabase)](https://supabase.com/)
+[![PWA](https://img.shields.io/badge/PWA-Offline%20Ready-blueviolet)](https://web.dev/progressive-web-apps/)
+[![Status](https://img.shields.io/badge/Deploy-GitHub%20Pages-success?logo=github)](https://deidi.github.io/event-caps/#/)
 
-> **EventCaps** is a 100% serverless, cloud-first event photo sharing hub. It runs **entirely in modern web browsers** with zero dedicated backend servers, zero database hosting costs, direct **Supabase Cloud Storage & CDN delivery**, real-time live moderation, multi-screen TV slideshows, and Google Drive cloud backup for 100+ attendees.
+> **EventCaps** is a 100% serverless, cloud-first real-time event photo sharing platform. Built entirely in modern web standards as a client-side Single Page Application (SPA), EventCaps requires **zero dedicated backend servers**, incurs **zero database hosting costs**, and delivers **direct-to-cloud Supabase photo storage**, sub-second **real-time moderation**, and high-impact **live TV presentation slideshows** for 100+ attendees.
+
+---
+
+## 🚀 Live Demo & Quick Links
+
+- **🌐 Live Production Web App**: [https://deidi.github.io/event-caps/#/](https://deidi.github.io/event-caps/#/)
+- **📦 Official v1.0.0 Release**: [GitHub Release Notes](https://github.com/deidi/event-caps/releases/tag/v1.0.0)
+- **📝 Project Changelog**: [CHANGELOG.md](CHANGELOG.md)
 
 ---
 
 ## 🌟 Key Features
 
-- ⚡ **Zero Backend Servers**: Pure client-side Single Page Application (SPA) built with Svelte 5 and Vite — zero Node.js servers, Python backends, or local CLI processes needed during live events.
-- 🌐 **Static Cloud Deployment**: Optimized for **GitHub Pages** (`https://deidi.github.io/event-caps/#/`) or any static hosting provider (Cloudflare Pages, Vercel, Netlify).
-- ☁️ **Direct-to-Cloud Supabase Storage**: Guests upload high-resolution photos directly to Supabase Storage buckets with sub-second global CDN distribution.
-- 📺 **Independent Multi-Tab TV Slideshow**: "Launch TV Slideshow" opens in a dedicated tab (`_blank`) with fullscreen presentation mode, custom transitions, and live QR watermark — ensuring the host dashboard and moderation queue stay active without interruption or session logout.
-- 🛡️ **Real-Time Moderation Queue & 1-Click Auto-Approve**: Instant photo review with guest attribution, individual and bulk approve/reject actions, and a 1-click **Auto-Approve** toggle for hands-free live events.
-- 📡 **Universal Real-Time Sync**: Instant photo streaming and status synchronization across host screens, guest phones, and TV walls via WebSockets and MQTT brokers.
-- ☁️ **Google Drive Backup**: 1-click cloud sync into organized event folder hierarchies (`/EventCaps Events/<Event Name>/originals` and `/thumbnails`).
-- 👤 **Host Security & PIN Authentication**: SHA-256 encrypted host PIN security, session tokens, and instant profile management.
-- 📊 **Real-Time Analytics & Leaderboard**: Track total submissions, approved photos, active attendee counts, disk storage used (MB), top contributor rankings, and hourly activity timeline graphs.
-- 🖼️ **Client-Side Image Optimization**: In-browser resizing (2048px), thumbnail generation (360px), EXIF orientation correction, and GPS coordinate stripping for privacy via HTML5 `OffscreenCanvas` and `exifr`.
-- 📦 **In-Memory ZIP Exporter**: Instant download of complete event archives containing original photos and `metadata.json` in under 2 seconds via `JSZip`.
-- 📴 **Offline PWA Resilience**: Full Service Worker and PWA manifest with offline queueing and `no-store` network-first updates.
-- 📜 **Compliance & Privacy**: Built-in Privacy Policy (`#/privacy`) and Terms of Service (`#/terms`) pages.
+### ⚡ 1. 100% Serverless & Pure SPA Architecture
+- **Zero Backend Maintenance**: Runs entirely inside host and guest web browsers. No Node.js containers, Python backends, or command-line scripts needed during events.
+- **Static Cloud Deployment**: Optimized for GitHub Pages, Cloudflare Pages, Vercel, or Netlify with built-in SPA 404 fallback routing.
+
+### ☁️ 2. Direct-to-Cloud Supabase Storage & CDN
+- **Direct Mobile Uploads**: Smartphone captures bypass host bandwidth limits by streaming directly from guest mobile devices into Supabase Storage buckets.
+- **Global Edge CDN**: Instant sub-second photo delivery to live moderation queues, attendee walls, and big-screen TV slideshows.
+- **Environment-Secured Credentials**: Supabase project endpoint, API keys, and bucket names (`eventcaps-photos`) are securely managed via environment variables and settings.
+
+### 📺 3. Independent Multi-Tab TV Slideshow (`_blank`)
+- **Preserved Host Sessions**: Launching the TV Slideshow opens in a separate browser tab, allowing the host's moderation dashboard to stay active and logged in on their laptop while presenting on a secondary TV/projector.
+- **Real-Time Presentation Stream**: Loops approved photos and immediately injects incoming approved captures without requiring page reloads.
+- **Presentation Shortcuts**: `F` (Fullscreen), `Space` (Pause/Resume carousel), and `←`/`→` (Manual slide navigation).
+- **Customizable Overlays**: Configurable transition intervals (`3s`, `5s`, `10s`), animation effects (`fade`, `slide`, `zoom`), photographer credit badges, and live corner QR code watermark for late arrivals.
+
+### 🛡️ 4. Real-Time Moderation Queue & 1-Click Auto-Approve
+- **Instant Photo Review**: Moderation feed with thumbnail previews, guest attribution, and upload timestamps.
+- **1-Click Auto-Approve Toggle**: Switch seamlessly between **`⚡ Auto-Approve: ON`** (hands-free live stream) and **`🛡️ Auto-Approve: OFF`** (manual review mode) with one-click approval of pending batches.
+- **Reversible Moderation**: Revert approved photos back to pending or permanently delete them with real-time removal across all connected screens.
+
+### 📱 5. Frictionless Guest Smartphone Experience
+- **Zero App Downloads**: Guests simply scan a dynamic QR code from any standard camera app to join in seconds.
+- **In-Browser Image Engine**: Automatic client-side resizing (2048px), thumbnail generation (360px), EXIF orientation correction, and GPS coordinate stripping via HTML5 Canvas and `exifr`.
+- **Live Upload Feedback**: Animated progress bar, sequential photo counters (`Uploading Photos 2 of 5`), and delivery confirmation.
+
+### 📊 6. Real-Time Analytics Dashboard
+- **Live Metrics**: Total photo submissions, approved count, active attendee count, and disk storage utilized (MB).
+- **🏆 Contributor Leaderboard**: Ranked table recognizing top guest photographers.
+- **⏱️ Activity Timeline**: Scaled chronological bar chart showing submission peaks throughout the gathering.
+
+### 📦 7. Data Ownership, Backup & Export
+- **In-Memory ZIP Exporter**: Download the complete event album with original photos and `metadata.json` in under 2 seconds using `JSZip`.
+- **Google Drive Cloud Backup**: 1-Click Google OAuth integration to back up event media directly into organized `/EventCaps Events/<Event Name>/` folder hierarchies.
+- **Offline PWA Resilience**: Service Worker with network-first caching and IndexedDB offline queues ensuring photos taken during intermittent connectivity are not lost.
 
 ---
 
-## 🏗️ Architecture Overview
+## 🏗️ System Architecture
 
 ```
                                  ┌──────────────────────────────────────────────┐
                                  │     📱 Guest Smartphones (100+ Attendees)    │
                                  │  - Zero App Install: Instant QR Code Scan    │
                                  │  - In-Browser Resize (2048px) & EXIF Strip   │
-                                 │  - Real-Time Live Memories Wall              │
+                                 │  - Live Memories Wall & Upload Progress      │
                                  └──────┬───────────────────────────────▲───────┘
                                         │                               │
                 1. Signaling & Approval │                               │ 3. Approved Media Stream
@@ -51,148 +82,167 @@
                             ▼                                           ▼                        ▼
               ┌───────────────────────────┐               ┌──────────────────────────┐ ┌───────────────────┐
               │ ⚡ Supabase Cloud Storage │               │ 📺 TV / Projector Screen │ │ ☁️ Google Drive   │
-              │  - High-Speed Photo CDN   │               │ - Dedicated New Tab View │ │    & ZIP Archive  │
+              │  - Global Edge Photo CDN  │               │ - Dedicated New Tab View │ │    & ZIP Archive  │
               │  - Bucket: eventcaps-photos               │ - Fullscreen Presentation│ │ - In-Memory Export│
               └───────────────────────────┘               └──────────────────────────┘ └───────────────────┘
 ```
 
 ---
 
-## 🚀 Live Demo & Getting Started
+## 🛠️ Technology Stack
 
-### 🌐 Access Live App
-- **Live Host & Guest App**: [https://deidi.github.io/event-caps/#/](https://deidi.github.io/event-caps/#/)
-- **Latest Release**: [EventCaps v1.0.0](https://github.com/deidi/event-caps/releases/tag/v1.0.0)
+| Layer | Technologies / Libraries | Purpose |
+| :--- | :--- | :--- |
+| **Frontend Framework** | [Svelte 5](https://svelte.dev/) | High-performance reactive UI with modern runes (`$state`) |
+| **Build Tool & Bundler** | [Vite 6](https://vitejs.dev/) | Fast HMR dev server and optimized production bundling |
+| **Cloud Storage** | [@supabase/supabase-js](https://supabase.com/) | Direct client-to-cloud photo uploads and global CDN delivery |
+| **Client Database** | [Dexie.js](https://dexie.org/) | Offline-first IndexedDB storage for events, photos, and host settings |
+| **Real-Time Signaling** | [MQTT.js](https://github.com/mqttjs/MQTT.js) | Sub-second WebSocket messaging for cross-device synchronization |
+| **Image Processing** | `HTML5 OffscreenCanvas` + [exifr](https://github.com/MikeKovarik/exifr) | In-browser resizing, thumbnail generation, and EXIF privacy stripping |
+| **QR Code Engine** | [qrcode](https://github.com/soldair/node-qrcode) | Dynamic in-browser generation of event join QR codes |
+| **Archive Exporter** | [JSZip](https://stuk.github.io/jszip/) | In-browser generation of full `.zip` albums and `metadata.json` |
+| **PWA & Offline** | Service Worker (`sw.js`) + Web App Manifest | Native installability on mobile and network-first cache resilience |
 
-### 💻 Local Development Setup
+---
 
-```bash
-# 1. Clone the repository
-git clone https://github.com/deidi/event-caps.git
-cd event-caps/client
+## 📁 Repository Structure
 
-# 2. Install dependencies
-npm install
-
-# 3. (Optional) Configure environment variables
-# Copy .env.example or create .env with your Supabase credentials:
-# VITE_SUPABASE_URL=https://your-project.supabase.co
-# VITE_SUPABASE_ANON_KEY=your-anon-public-key
-# VITE_SUPABASE_BUCKET=eventcaps-photos
-
-# 4. Start local development server
-npm run dev
-
-# 5. Build for production
-npm run build
+```
+event-caps/
+├── .github/
+│   └── workflows/
+│       └── deploy.yml          # Automated GitHub Pages CI/CD workflow
+├── client/                     # Frontend client application
+│   ├── public/
+│   │   ├── 404.html            # SPA fallback for deep links on GitHub Pages
+│   │   ├── manifest.json       # PWA progressive web app configuration
+│   │   ├── sw.js               # Network-first Service Worker
+│   │   └── .nojekyll           # Disables Jekyll processing on GitHub Pages
+│   ├── src/
+│   │   ├── lib/
+│   │   │   ├── api.js          # Unified API bridging DB, storage & realtime
+│   │   │   ├── archive.js      # In-memory JSZip event archive creator
+│   │   │   ├── db.js           # Dexie.js IndexedDB schema and operations
+│   │   │   ├── gdrive.js       # Google Drive OAuth 2.0 integration
+│   │   │   ├── offline-queue.js# Offline upload queue for unstable connections
+│   │   │   ├── photo-engine.js # Client-side image resizer & EXIF orientation
+│   │   │   ├── realtime.js     # MQTT over WebSockets live signaling
+│   │   │   └── storage.js      # Supabase Cloud Storage client & CDN handlers
+│   │   ├── App.svelte          # Main reactive SPA component
+│   │   ├── app.css             # Design tokens, typography & animations
+│   │   └── main.js             # Svelte 5 application entry point
+│   ├── .env.example            # Environment variables template
+│   ├── index.html              # HTML shell
+│   ├── package.json            # Client dependencies & scripts
+│   └── vite.config.js          # Vite config with relative base path ('./')
+├── CHANGELOG.md                # Release history and version tracking
+├── README.md                   # Comprehensive project documentation
+└── package.json                # Root convenience scripts (npm run dev/build)
 ```
 
 ---
 
-## ➕ How to Create and Host an Event
+## 💻 Local Development Setup
 
-Creating an event space takes less than 30 seconds:
+### Prerequisites
+- [Node.js](https://nodejs.org/) (v18 or higher recommended)
+- [npm](https://www.npmjs.com/)
 
-1. **Access the Host Dashboard**:
+### 1. Clone the Repository
+```bash
+git clone https://github.com/deidi/event-caps.git
+cd event-caps
+```
+
+### 2. Install Dependencies
+```bash
+# Install dependencies in client
+npm --prefix client install
+```
+
+### 3. Environment Variables (Optional)
+EventCaps has pre-configured production defaults. If you wish to use your own Supabase project:
+```bash
+cd client
+cp .env.example .env
+```
+Edit `.env`:
+```env
+VITE_SUPABASE_URL=https://your-project-id.supabase.co
+VITE_SUPABASE_ANON_KEY=your-supabase-anon-public-key
+VITE_SUPABASE_BUCKET=eventcaps-photos
+```
+
+### 4. Run Development Server
+```bash
+# From root
+npm run dev
+
+# Or directly in client directory
+cd client
+npm run dev
+```
+Open `http://localhost:5173` in your browser.
+
+### 5. Build for Production
+```bash
+# From root
+npm run build
+
+# Preview production build locally
+npm run preview
+```
+The compiled static assets are generated in `client/dist/`.
+
+---
+
+## 📖 Event Day Runbook
+
+### For Hosts & Event Organizers
+
+1. **Initial Setup**:
    - Open **[https://deidi.github.io/event-caps/#/](https://deidi.github.io/event-caps/#/)**.
-   - Set up your **Host Name & 4-Digit PIN** on initial launch (or enter your PIN to unlock).
+   - Create your **Host Display Name** and **4-Digit Admin PIN** on first setup.
+   - Verify cloud storage status via the **`⚡ Supabase Cloud Storage: Active`** indicator.
+2. **Create the Event**:
+   - Click **`+ Create New Event`**.
+   - Enter the Event Name, Date, Tagline, and per-guest upload limits.
+   - Choose moderation preference: Enable manual moderation or toggle Auto-Approve.
+3. **Display & Share QR Code**:
+   - Click **`📱 QR Code`** on the event card.
+   - Use **`📺 Full-Screen TV Mode`** to project the join QR code at venue entrances, or **`💾 Download PNG`** to print on table cards.
+4. **Launch TV Slideshow**:
+   - Click **`📺 Launch TV Slideshow`** — it opens in a separate browser tab (`_blank`).
+   - Drag this tab to your venue TV screen or projector and press **`F`** for fullscreen.
+   - Your host dashboard remains intact on your laptop for real-time moderation!
+5. **Moderate & Export**:
+   - Approve, reject, or auto-approve photos in real time.
+   - After the event, click **`📦 Export Full Archive`** to download all original photos and metadata in a single `.zip` file.
 
-2. **Click `+ Create New Event`**:
-   - Click the primary **`+ Create New Event`** button on your dashboard.
+### For Attendees & Guests
 
-3. **Configure Your Event Space**:
-   - **Event Name**: E.g., `Annual Gala 2026`, `Emma & David's Wedding`, `Tech Conference`.
-   - **Date**: Scheduled event date.
-   - **Tagline / Message** *(Optional)*: Welcome message displayed on guest capture screens and the live slideshow.
-   - **Per-Guest Upload Limit**: Limit uploads per attendee (e.g., `5`, `10`, `25`, or unlimited).
-   - **Photo Moderation Queue**:
-     - *Enabled (Recommended)*: Photos require host approval in the moderation queue before appearing on live screens.
-     - *Disabled / Auto-Approve*: Photos appear on the live wall and TV slideshow immediately.
-   - **Strip EXIF Metadata**: Automatically strips GPS coordinates and device metadata for attendee privacy.
-
-4. **Launch & Display**:
-   - In the event view, click **`📱 QR Code`** to show or print the event join code.
-   - Click **`📺 Launch TV Slideshow`** to open the live presentation view in a separate tab or on a secondary display.
-
----
-
-## 📱 How to Use During an Event
-
-| Role / Device | URL Route | Instructions |
-| :--- | :--- | :--- |
-| **💻 Host Dashboard** | `https://deidi.github.io/event-caps/#/` | 1. Log in with your Admin PIN.<br>2. Click **`+ Create New Event`**.<br>3. Click **`📱 QR Code`** to project or print for guests.<br>4. Click **`📺 Launch TV Slideshow`** to open the presentation in a new tab.<br>5. Moderate guest uploads in real time or view **📊 Analytics**. |
-| **📱 Guests (Smartphones)** | `https://deidi.github.io/event-caps/#/event/<slug>` | 1. Scan the host's QR code (no app download needed).<br>2. Enter their name (e.g. `Sarah`) and tap **Join Event**.<br>3. Snap photos with their phone camera or camera roll.<br>4. Watch approved photos appear on the **Live Memories Wall**! |
-| **📺 TV / Projector Mode** | `https://deidi.github.io/event-caps/#/event/<slug>/slideshow` | 1. Opens in a separate browser tab.<br>2. Move to TV/projector screen and press **`F`** for fullscreen.<br>3. Real-time dynamic carousel streams photos automatically. |
-
----
-
-## 📺 Live TV & Projector Slideshow Mode
-
-The slideshow view is specifically crafted for big-screen presentation during live events:
-- **Dedicated Tab Behavior**: Launched via `window.open(..., '_blank')` so the host's moderation dashboard and active session remain uninterrupted on their laptop.
-- **Dynamic Stream**: Automatically loops approved photos and smoothly injects newly approved captures in real time.
-- **Keyboard Controls**:
-  - **`F`**: Toggle Fullscreen mode.
-  - **`Space`**: Pause / Resume slide carousel.
-  - **`←` / `→`**: Manually advance or revisit slides.
-- **Customizable Presentation Settings**:
-  - Slide interval speed (`3s`, `5s`, `10s`).
-  - Transition animations (`fade`, `slide`, `zoom`).
-  - Toggle photographer credit badge on/off.
-  - Toggle live corner QR watermark so late attendees can join anytime.
+1. **Join**:
+   - Scan the event QR code with any smartphone camera.
+   - Type your name (e.g. `Emma`) and tap **Join Event**.
+2. **Capture & Upload**:
+   - Tap **📸 Camera** to capture live photos or **🖼️ Camera Roll** to select existing ones.
+   - Watch the upload progress bar and delivery feedback.
+3. **Live Memories**:
+   - View approved memories on the live event stream in real time.
+   - Delete any of your own photos at any time to free up quota.
 
 ---
 
-## ☁️ Cloud Storage & Backup Architecture
+## 🌐 Deploying to GitHub Pages
 
-### ⚡ Supabase Cloud Storage
-- **Direct-to-Cloud Uploads**: Photos upload straight from attendee devices to your Supabase Storage bucket, avoiding host bandwidth bottlenecks.
-- **High-Speed CDN Delivery**: Photos stream across global Edge CDNs for fast rendering on high-resolution TV displays and guest devices.
-- **Secure Configuration**: Project URL, anon API key, and bucket name (`eventcaps-photos`) are securely managed via environment variables and settings.
-- **Connection Test Tool**: Built-in `🧪 Test Connection` utility in the host settings modal to verify storage connectivity in one click.
+EventCaps includes an automated GitHub Actions workflow in `.github/workflows/deploy.yml`:
 
-### ☁️ Google Drive Cloud Backup
-- **1-Click Google Authorization**: Connect your Google account to sync event albums directly into Google Drive folder structures.
-- **Resumable Upload Sessions**: Robust background transfer with live progress tracking.
-
-### 📦 In-Memory ZIP Archiver
-- Export complete event archives (`.zip`) containing full-resolution original photos and `metadata.json` directly from the browser in seconds using `JSZip`.
-
----
-
-## 🛡️ Real-Time Moderation Queue
-
-- **Live Review Feed**: Real-time incoming queue displaying thumbnail previews, author names, and timestamps.
-- **1-Click Moderation Actions**:
-  - **`Approve`** / **`Reject`**: Moderate individual captures.
-  - **`Approve All`** / **`Reject All`**: Handle high-traffic upload bursts in one click.
-- **⚡ 1-Click Auto-Approve Toggle**:
-  - Easily toggle between **`⚡ Auto-Approve: ON`** (hands-free live stream) and **`🛡️ Auto-Approve: OFF`** (strict curation).
-  - Offers a quick prompt to instantly approve all currently waiting photos when toggled on.
-- **Live Gallery Management**:
-  - **`↩️ Revert to Pending`**: Instantly removes an already approved photo from live screens back into the moderation queue.
-  - **`🗑️ Delete`**: Permanently purges a photo across host and all attendee screens.
-  - **Full-Screen Lightbox**: High-res inspection with download capabilities.
-
----
-
-## 📊 Analytics Dashboard
-
-Click **📊 Analytics** inside any event to inspect real-time metrics:
-- **Total Uploads**: Cumulative photo count received.
-- **Approved & Live**: Count of photos actively displayed.
-- **Active Guests**: Number of unique contributing attendees.
-- **Disk Storage Used**: Total footprint of event photos in MB.
-- **🏆 Top Guest Contributors**: Live leaderboard recognizing top attendee photographers.
-- **⏱️ Activity Timeline by Hour**: Interactive bar chart displaying submission volume chronologically throughout the event.
-
----
-
-## 📴 Offline PWA & Device Resilience
-
-- **Offline Upload Queue**: Captures taken during intermittent connectivity are queued in local IndexedDB and automatically flush when connectivity resumes.
-- **Mobile PWA Support**: Installable directly from mobile browser menus onto iOS and Android home screens.
-- **Network-First Service Worker**: Uses `no-store` cache policies so hotfixes and app updates deploy instantly without stale browser caches.
+1. **Enable GitHub Pages**:
+   - Go to your repository on GitHub: **Settings → Pages**.
+   - Under **Build and deployment → Source**, select **GitHub Actions**.
+2. **Push Changes**:
+   - Every push to the `main` branch triggers an automated build and deployment.
+   - The workflow compiles the Svelte 5 SPA, generates `404.html` for SPA hash routing, and publishes to GitHub Pages.
 
 ---
 
