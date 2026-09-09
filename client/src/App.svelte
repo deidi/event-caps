@@ -2126,7 +2126,7 @@
         <p class="text-secondary" style="font-size: 0.875rem; margin-bottom: 2rem;">Last Updated: August 2026</p>
 
         <h3 style="margin-top: 1.5rem;">1. Overview</h3>
-        <p class="text-secondary">EventCaps (<code>https://deidi.github.io/event-caps/</code>) is a server-less event photo sharing hub. We are committed to protecting your privacy and providing transparent information regarding how data is handled.</p>
+        <p class="text-secondary">EventCaps (<code>https://deidi.github.io/event-caps/</code>) is a zero-backend event photo sharing hub. We are committed to protecting your privacy and providing transparent information regarding how data is handled.</p>
 
         <h3 style="margin-top: 1.5rem;">2. Google Drive Permissions & Data Use</h3>
         <p class="text-secondary">EventCaps connects to your Google Account using the restricted <code>https://www.googleapis.com/auth/drive.file</code> OAuth scope. This permission is strictly used to:</p>
@@ -2694,13 +2694,13 @@
         <div class="hero-section" style="margin-bottom: 2rem;">
           <h1 style="font-size: 2.25rem; font-weight: 800; margin-bottom: 0.5rem;">📸 EventCaps</h1>
           <p class="text-secondary" style="font-size: 1.125rem; max-width: 620px; margin: 0 auto 1.5rem auto;">
-            A 100% server-less, cloud-first event photo sharing hub. Capture, moderate, and stream live event memories with Google Drive cloud hosting.
+            A zero-backend, cloud-first event photo sharing hub. Capture, moderate, and stream live event memories with Supabase Cloud Storage and CDN delivery.
           </p>
           <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-bottom: 2rem;">
             <div style="background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius-md); padding: 1.25rem; text-align: left; max-width: 270px; flex: 1 1 240px;">
               <div style="font-size: 1.75rem; margin-bottom: 0.35rem;">☁️</div>
               <strong style="font-size: 1rem;">100+ Live Uploads</strong>
-              <p class="text-secondary" style="font-size: 0.8125rem; margin-top: 0.35rem; line-height: 1.4;">Direct Google Drive cloud storage and high-speed Google CDN photo delivery.</p>
+              <p class="text-secondary" style="font-size: 0.8125rem; margin-top: 0.35rem; line-height: 1.4;">Direct Supabase Cloud Storage and high-speed global CDN photo delivery.</p>
             </div>
             <div style="background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius-md); padding: 1.25rem; text-align: left; max-width: 270px; flex: 1 1 240px;">
               <div style="font-size: 1.75rem; margin-bottom: 0.35rem;">📺</div>

@@ -1,7 +1,7 @@
 {
   "name": "EventCaps — Memories Shared",
   "short_name": "EventCaps",
-  "description": "Server-less church and event photo sharing hub",
+  "description": "Zero-backend real-time event photo sharing hub",
   "start_url": "./",
   "display": "standalone",
   "orientation": "portrait",
