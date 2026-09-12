@@ -58,7 +58,7 @@ export function getSupabaseClient() {
 }
 
 /**
- * Test connectivity to Supabase and the eventcaps-photos bucket
+ * Test connectivity to Supabase
  */
 export async function testStorageConnection() {
   const client = getSupabaseClient();
@@ -71,10 +71,10 @@ export async function testStorageConnection() {
   });
 
   if (error) {
-    throw new Error(`Supabase Storage Error: ${error.message}. Make sure bucket '${bucket}' exists and is Public.`);
+    throw new Error(`Supabase Storage Error: ${error.message}. Make sure the storage bucket exists and is Public.`);
   }
 
-  return { success: true, bucket, message: `Connected to Supabase bucket: ${bucket}` };
+  return { success: true, bucket, message: 'Connected to Supabase' };
 }
 
 /**
